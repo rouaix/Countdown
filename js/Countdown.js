@@ -54,6 +54,7 @@ draw();
 
 function LancerDecompte(){
     document.getElementById('Pause').innerHTML = "Pause";
+    document.getElementById("image").style.display = "none";
     
     tempsDemande = 0;
     tempsEcoule = 0;
@@ -139,6 +140,7 @@ function CompteurDecompte(){
         document.getElementById('xsecondes').innerHTML = 0 + "<div>Secondes</div>";
         
         clearInterval(Decompte);
+        document.getElementById("image").style.display = "block";
     }
 }
 
@@ -166,6 +168,12 @@ function InitialiserDecompte(){
     document.getElementById("nSecondes").value = "";
     
     document.getElementById("saisie").style.display = "block";
+    document.getElementById("image").style.display = "none";
+    
+    degrees = -1;
+    new_degrees = 0;
+    difference = 0;
+    draw();
 }
 
 function ResetDecompte(){    
