@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <link href="style/Countdown.css" rel="stylesheet" type="text/css"/>
+        <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+        
+    </head>
+<body >
+    <h1 id="titre" class="">Compte à rebours</h1> 
+    <div id="saisie" class="saisie">
+        <h1 id="infos" class="">Saisir vos temps ici !</h1>
+        <input class="btn" type="number" name="nJours" id="nJours" placeholder="Jours"  min="0" max="365" onblur="ControleSaisie('nJours');">
+        <input class="btn" type="number" name="nHeures" id="nHeures" placeholder="Heures" min="0" max="24" onblur="ControleSaisie('nHeures');">
+        <input class="btn" type="number" name="nMinutes" id="nMinutes" placeholder="Minutes" min="0" max="60" onblur="ControleSaisie('nMinutes');">
+        <input class="btn" type="number" name="nSecondes" id="nSecondes" placeholder="Secondes" min="0" max="60" onblur="ControleSaisie('nSecondes');">
+    </div>     
+    <div class="display">        
+        <canvas id="canvas" width="300" height="300"></canvas>
+        <div class="affiche">
+            <div id="xjours" class="xjours">0<div>Jours</div></div>
+            <div id ="xheures" class="xheures">0<div>Heures</div></div>
+            <div id="xminutes" class="xminutes">0<div>Minutes</div></div>
+            <div id="xsecondes" class="xsecondes">0<div>Secondes</div></div>
+        </div>              
+    </div>    
+    <div class="bouton">
+       <button id="lancer" class="btn" type="button" onclick="LancerDecompte();">Lancer</button>
+       <button id="Pause" class="btn" type="button" onclick="PauseRepriseDecompte();">Pause</button>
+       <button id="reset" class="btn" type="button" onclick="ResetDecompte();">Reset</button>
+       <button id="init" class="btn" type="button" onclick="InitialiserDecompte();">Initialise</button>           
+    </div>     
+    
+    <script src="js/Countdown.js"></script>
+</body>
+</html>
