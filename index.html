@@ -1,44 +1,51 @@
 <!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
 <html>
     <head>
-        <title>TODO supply a title</title>
+        <title>Compte à rebours</title>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        
-        <link href="style/Countdown.css" rel="stylesheet" type="text/css"/>
-        <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
-        
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">        
+        <link href="style/Countdown.css" rel="stylesheet" type="text/css"/>        
     </head>
 <body >
-    <h1 id="titre" class="">Compte à rebours</h1> 
+    <h1 id="titre">Compte à rebours</h1>
+    <section>
     <div id="saisie" class="saisie">
-        <h1 id="infos" class="">Saisir vos temps ici !</h1>
-        <input class="btn" type="number" name="nJours" id="nJours" placeholder="Jours"  min="0" max="365" onblur="ControleSaisie('nJours');">
-        <input class="btn" type="number" name="nHeures" id="nHeures" placeholder="Heures" min="0" max="24" onblur="ControleSaisie('nHeures');">
-        <input class="btn" type="number" name="nMinutes" id="nMinutes" placeholder="Minutes" min="0" max="60" onblur="ControleSaisie('nMinutes');">
-        <input class="btn" type="number" name="nSecondes" id="nSecondes" placeholder="Secondes" min="0" max="60" onblur="ControleSaisie('nSecondes');">
-    </div>     
-    <div class="display">        
+        <h2 id="infos">Merci de saisir vos temps ici !</h2>
+        <input class="" type="number" name="nJours" id="nJours" placeholder="Jours"  min="0" max="365" onblur="ControleSaisie('nJours');">
+        <input class="" type="number" name="nHeures" id="nHeures" placeholder="Heures" min="0" max="24" onblur="ControleSaisie('nHeures');">
+        <input class="" type="number" name="nMinutes" id="nMinutes" placeholder="Minutes" min="0" max="60" onblur="ControleSaisie('nMinutes');">
+        <input class="" type="number" name="nSecondes" id="nSecondes" placeholder="Secondes" min="0" max="60" onblur="ControleSaisie('nSecondes');">
+    </div>          
+    </section>   
+    <section>
+        <div class="bouton">
+          <button id="lancer" class="btn" type="button" onclick="LancerDecompte();">Lancer</button>
+          <button id="Pause" class="btn" type="button" onclick="PauseRepriseDecompte();">Stop</button>
+          <button id="reset" class="btn" type="button" onclick="ResetDecompte();">Reset</button>
+          <button id="init" class="btn" type="button" onclick="InitialiserDecompte();">Initialise</button>
+       </div>      
+    </section>
+    <section id="compteur">
         <canvas id="canvas" width="300" height="300"></canvas>
-        <div class="affiche">
+    </section>    
+    <article>
+
+        <section id="decompter">
             <div id="xjours" class="xjours">0<div>Jours</div></div>
-            <div id ="xheures" class="xheures">0<div>Heures</div></div>
+            <div id="xheures" class="xheures">0<div>Heures</div></div>
             <div id="xminutes" class="xminutes">0<div>Minutes</div></div>
             <div id="xsecondes" class="xsecondes">0<div>Secondes</div></div>
-        </div>              
-    </div>    
-    <div class="bouton">
-       <button id="lancer" class="btn" type="button" onclick="LancerDecompte();">Lancer</button>
-       <button id="Pause" class="btn" type="button" onclick="PauseRepriseDecompte();">Pause</button>
-       <button id="reset" class="btn" type="button" onclick="ResetDecompte();">Reset</button>
-       <button id="init" class="btn" type="button" onclick="InitialiserDecompte();">Initialise</button>           
-    </div>     
+        </section>       
+        
+    </article>
+    <aside>
+
+    </aside>
+    
+    
     <div id="image" class="centre"><img src="./img/1.gif" alt="Fin !" /></div>
+    
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
     <script src="js/Countdown.js"></script>
 </body>
 </html>
