@@ -24,7 +24,7 @@ tempsDemande = 0;
 
 
 function LancerDecompte(){
-    if(tempsEcoule == 0){
+    //if(tempsEcoule == 0){
         document.getElementById('Pause').innerHTML = "Pause";
         document.getElementById("image").style.display = "none";
 
@@ -61,7 +61,7 @@ function LancerDecompte(){
 
 
         Decompte = setInterval(CompteurDecompte,1000);
-    }
+    //}
 }
 
 function CompteurDecompte(){    
@@ -128,6 +128,8 @@ function PauseRepriseDecompte(){
 }
 
 function InitialiserDecompte(){
+    
+    
     clearInterval(Decompte); 
       
     document.getElementById('xjours').innerHTML = 0 + "<div>Jours</div>";
@@ -145,11 +147,13 @@ function InitialiserDecompte(){
     
     //document.getElementById("Lancer").disabled = "false" ;
     
-    tempsEcoule = 0;l
-    degrees = 0;
+    tempsEcoule = 0;
+    
+    degrees = -1;
     new_degrees = 0;
-    difference = 0;
+    
     draw();
+    document.location.reload(true);
 }
 
 function ResetDecompte(){    
@@ -211,6 +215,7 @@ difference = 0;
 color = "#fff";
 bgcolor = "#1C2021";
 //------------------------------------------------------------- 
+
 draw();
 
 function init()
@@ -229,6 +234,7 @@ function init()
     Gauge.stroke();
     Gauge.fillStyle = color;
     Gauge.font = "50px tahoma";                
+    
     text = Math.floor(degrees/360*100) + " %";
     text_width = Gauge.measureText(text).width;
     Gauge.fillText(text, W/2 - text_width/2, H/2 + 15);
