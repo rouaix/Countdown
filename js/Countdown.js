@@ -24,40 +24,44 @@ tempsDemande = 0;
 
 
 function LancerDecompte(){
-    document.getElementById('Pause').innerHTML = "Pause";
-    document.getElementById("image").style.display = "none";
-    
-    tempsDemande = 0;
-    tempsEcoule = 0;
-    
-    cJours = document.getElementById("nJours").value;
-    cHeures = document.getElementById("nHeures").value;
-    cMinutes = document.getElementById("nMinutes").value;
-    cSecondes = document.getElementById("nSecondes").value;
+    if(tempsEcoule == 0){
+        document.getElementById('Pause').innerHTML = "Pause";
+        document.getElementById("image").style.display = "none";
 
-    if (!cJours){cJours=0;}
-    if (!cHeures){cHeures=0;}
-    if (!cMinutes){cMinutes=0;}
-    if (!cSecondes){cSecondes=0;}
-    
-    ctJours = cJours;
-    ctHeures = cHeures;
-    ctMinutes = cMinutes;
-    ctSecondes = cSecondes;
+        tempsDemande = 0;
+        tempsEcoule = 0;
 
-    if (cJours > 0){tempsDemande = tempsDemande + Math.round(cJours * 86400);}
-    if (cHeures > 0){tempsDemande = tempsDemande + Math.round(cHeures * 3600);}
-    if (cMinutes > 0){tempsDemande = tempsDemande + Math.round(cMinutes * 60);}
-    if (cSecondes > 0){tempsDemande =  tempsDemande + Math.round(cSecondes) ;}
-    
-     tempsCompteurEnSecondes = tempsDemande;
-     
-    //tempsDemande = document.getElementById('nJours').value;  
-    //document.getElementById("infos").innerHTML  = tempsDemande;
-    
-    document.getElementById("saisie").style.display = "none";
-    
-    Decompte = setInterval(CompteurDecompte,1000);
+        cJours = document.getElementById("nJours").value;
+        cHeures = document.getElementById("nHeures").value;
+        cMinutes = document.getElementById("nMinutes").value;
+        cSecondes = document.getElementById("nSecondes").value;
+
+        if (!cJours){cJours=0;}
+        if (!cHeures){cHeures=0;}
+        if (!cMinutes){cMinutes=0;}
+        if (!cSecondes){cSecondes=0;}
+
+        ctJours = cJours;
+        ctHeures = cHeures;
+        ctMinutes = cMinutes;
+        ctSecondes = cSecondes;
+
+        if (cJours > 0){tempsDemande = tempsDemande + Math.round(cJours * 86400);}
+        if (cHeures > 0){tempsDemande = tempsDemande + Math.round(cHeures * 3600);}
+        if (cMinutes > 0){tempsDemande = tempsDemande + Math.round(cMinutes * 60);}
+        if (cSecondes > 0){tempsDemande =  tempsDemande + Math.round(cSecondes) ;}
+
+         tempsCompteurEnSecondes = tempsDemande;
+
+        //tempsDemande = document.getElementById('nJours').value;  
+        //document.getElementById("infos").innerHTML  = tempsDemande;
+
+        document.getElementById("saisie").style.display = "none";
+        //document.getElementById("Lancer").disabled = "true";
+
+
+        Decompte = setInterval(CompteurDecompte,1000);
+    }
 }
 
 function CompteurDecompte(){    
@@ -139,6 +143,9 @@ function InitialiserDecompte(){
     document.getElementById("saisie").style.display = "block";
     document.getElementById("image").style.display = "none";
     
+    //document.getElementById("Lancer").disabled = "false" ;
+    
+    tempsEcoule = 0;l
     degrees = 0;
     new_degrees = 0;
     difference = 0;
